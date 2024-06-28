@@ -7,13 +7,15 @@ function Banner() {
         <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-36">
           <div className="space-y-8">
             <h1 className="text-2xl md:text-4xl font-bold">
-              Hello, welcomes here to learn something{" "}
+              Hello, Welcome to ReadStore to learn something{" "}
               <span className="text-pink-500">new everyday!!!</span>
             </h1>
             <p className="text-sm md:text-xl">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              et totam. Tempora amet atque expedita, quae corrupti totam sed
-              pariatur corporis at veniam est voluptas animi!
+              Books are gateways to endless worlds, offering knowledge, inspiration, 
+              and solace. They ignite our imagination, broaden our perspectives, and 
+              transport us through time and space.
+              At ReadStore, we celebrate the magic of books, 
+              inviting you to embark on unforgettable journeys and discover the wonder within every page.
             </p>
             <label className="input input-bordered flex items-center gap-2">
               <svg

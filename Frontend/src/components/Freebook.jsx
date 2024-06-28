@@ -1,14 +1,28 @@
 import React, { useEffect, useState } from "react";
-import list from "../../public/list.json";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import axios from "axios";
 
-import Cards from "./Cards.jsx";
+import Cards from "./Cards";
 function Freebook() {
-  const filterData = list.filter((data) => data.category === "Free");
+  const [book, setBook] = useState([]);
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const res = await axios.get("http://localhost:4001/book");
+
+        const data = res.data.filter((data) => data.category === "Free");
+        console.log(data);
+        setBook(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
 
   var settings = {
     dots: true,
@@ -50,15 +64,17 @@ function Freebook() {
         <div>
           <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium veritatis alias pariatur ad dolor repudiandae eligendi
-            corporis nulla non suscipit, iure neque earum?
+        Explore our collection of free courses, designed to ignite your passion 
+        for learning. From beginner to advanced levels, each course offers valuable 
+        knowledge and practical skills. Join us at ReadStore and embark on your educational 
+        journey today, unlocking new opportunities and enriching your mind with our expertly 
+        crafted content.
           </p>
         </div>
 
         <div>
           <Slider {...settings}>
-            {filterData.map((item) => (
+            {book.map((item) => (
               <Cards item={item} key={item.id} />
             ))}
           </Slider>

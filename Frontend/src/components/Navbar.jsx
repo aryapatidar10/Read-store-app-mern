@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Login from "./Login";
 import Logout from "./Logout";
+import Contact from "./Contact";
 import { useAuth } from "../context/AuthProvider";
 
 function Navbar() {
@@ -9,6 +10,7 @@ function Navbar() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const [showContactModal, setShowContactModal] = useState(false);
   const element = document.documentElement;
   useEffect(() => {
     if (theme === "dark") {
@@ -45,10 +47,7 @@ function Navbar() {
         <a href="/course">Course</a>
       </li>
       <li>
-        <a>Contact</a>
-      </li>
-      <li>
-        <a>About</a>
+      <button onClick={() => setShowContactModal(true)}>Contact</button>
       </li>
     </>
   );
@@ -165,6 +164,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      {showContactModal && <Contact closeModal={() => setShowContactModal(false)} />}
     </>
   );
 }
