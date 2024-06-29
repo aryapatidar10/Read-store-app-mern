@@ -13,8 +13,9 @@ app.use(express.json());
 
 dotenv.config();
 
-const PORT = process.env.PORT || 4000;
-const URI = process.env.MongoDBURI;
+const PORT = process.env.PORT || 5000;
+// const URI = process.env.MongoDBURI;
+const URI = "mongodb+srv://aryapatidar:2345@cluster0.u0c0fho.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 // connect to mongoDB
 try {
