@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
 
 import bookRoute from "./route/book.route.js";
 import userRoute from "./route/user.route.js";
@@ -27,6 +28,15 @@ try {
 } catch (error) {
     console.log("Error: ", error);
 }
+//deploying
+if(process.env.NODE_ENV === "production")
+    {
+        const dirPath = path.resolve();
+        app.use(express.static("Frontend/dist"))
+        app.get("*" ,(req,res) =>{
+            res.sendFile(path.resolve(dirPath,"Frontend","dist","index.html"));
+        })
+    }
 
 // defining routes
 app.use("/book", bookRoute);
