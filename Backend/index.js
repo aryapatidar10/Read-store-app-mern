@@ -9,14 +9,20 @@ import userRoute from "./route/user.route.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        // origin: ["http://read-store-app.versel.app"],
+        methods: ["POST" , "GET"],
+        credentials: true;
+    }
+    ));
 app.use(express.json());
 
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const URI = process.env.MongoDBURI;
-// const URI = "mongodb+srv://aryapatidar:2345@cluster0.u0c0fho.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+// const URI = process.env.MongoDBURI;
+const URI = "mongodb+srv://aryapatidar:2345@cluster0.u0c0fho.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 // connect to mongoDB
 try {
