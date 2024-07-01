@@ -16,7 +16,11 @@ function Login() {
       password: data.password,
     };
     await axios
+<<<<<<< HEAD
       .post("http://localhost:5002/user/login", userInfo)
+=======
+      .post("http://localhost:5001/user/login", userInfo)
+>>>>>>> 460338ae74743b282e0e61e603ea6a5d528fc3b2
       .then((res) => {
         console.log(res.data);
         if (res.data) {
