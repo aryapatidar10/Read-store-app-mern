@@ -10,7 +10,7 @@ function Course() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("/book");
+        const res = await axios.get("http://localhost:5001/book");
         console.log(res.data);
         if (Array.isArray(res.data)) {
           setBook(res.data);
