@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aryapatidar10/ReadStoreApp.git"
+    "url": "git+https://github.com/aryapatidar10/Read-store-app-mern.git"
   },
   "author": "Arya",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aryapatidar10/ReadStoreApp/issues"
+    "url": "https://github.com/aryapatidar10/Read-store-app-mern.git/issues"
   },
-  "homepage": "https://github.com/aryapatidar10/ReadStoreApp#readme",
+  "homepage": "https://github.com/aryapatidar10/Read-store-app-mern.git#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
